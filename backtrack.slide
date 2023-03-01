@@ -17,12 +17,12 @@ love-nankai@163.com
 
     求对于n个盘子，移动到最终位置需要的最少步数  
     
-.image https://raw.githubusercontent.com/zrcoder/presents/main/backktrack/hanio1.png
+.image https://raw.githubusercontent.com/zrcoder/presents/main/backtrack/hanio1.png
 
 * 解决算法问题的乐趣
     f(n) = 2 * f(n-1) + 1
     
-.image https://raw.githubusercontent.com/zrcoder/presents/main/backktrack/hanio2.png 
+.image https://raw.githubusercontent.com/zrcoder/presents/main/backtrack/hanio2.png 
 
 * 解决算法问题的乐趣
 
@@ -424,7 +424,7 @@ IntHeap相关实现如下
     n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
     给定一个整数 n，返回所有不同的 n 皇后问题的解决方案。
     
-.image https://raw.githubusercontent.com/zrcoder/presents/main/backktrack/8-queens.png
+.image https://raw.githubusercontent.com/zrcoder/presents/main/backtrack/8-queens.png
 
 * 回溯思想应用的例子
 
@@ -449,7 +449,7 @@ IntHeap相关实现如下
 
     红色表示已经放置了Q，黑色表示不能放置Q的位置，蓝色表示可以放置Q的位置
     
-.image https://raw.githubusercontent.com/zrcoder/presents/main/backktrack/queen.png
+.image https://raw.githubusercontent.com/zrcoder/presents/main/backtrack/queen.png
     
     省略第一个Q在第一行第三格和第一行最后一格的图示
     时间复杂度O(n!)；空间复杂度O(n)
@@ -654,7 +654,7 @@ canSetQueen用来判断位置(r, c)处放一个皇后是否会和同行、同列
     机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。    
     现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？    
     
-.image https://raw.githubusercontent.com/zrcoder/presents/main/backktrack/robot_maze.png
+.image https://raw.githubusercontent.com/zrcoder/presents/main/backtrack/robot_maze.png
 
 * 回溯的优化
    

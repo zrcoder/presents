@@ -15,3 +15,7 @@
 ## Redesign heap
 
 <https://go-talks.appspot.com/github.com/zrcoder/presents/heap.slide>
+
+## Backtrack
+
+<https://go-talks.appspot.com/github.com/zrcoder/presents/backtrack.slide>
