@@ -1,0 +1,97 @@
+# Bit Set
+
+——有人问我是与非，说是与非
+
+13 Jun 2019
+
+zrcoder
+
+love-nankai@163.com
+
+---
+## 标准库里的数据结构
+- array, slice, map
+    语言自带
+- sync.Map
+    线程安全的map
+- container/list.List
+    双向链表
+- container/heap
+    一棵树，每个节点都比子树所有节点小
+- container/ring
+    循环链表
+
+---
+## 我们的数据结构
+.link https://github.com/zrcoder/dsGo
+- base 或 safe?
+    我们提供base和safe两种版本的数据结构
+    base版本的性能高于safe版
+    safe版本是线程安全的
+- queue
+    队列，提供一个FIFO（先进先出）的序列
+- stack
+    栈，提供一个LIFO（后进先出）的序列
+- set
+    就是我们高中数学学过的集合~
+
+---
+## Bit set
+- 也叫bit array，bit vector。
+    众猿媛所周知，我们用一个bool变量来存储一个true或false值
+    如果要存的数据量比较大呢?比如存储公司180000员工的性别
+    用一个bool数组的话，就需要180000字节的内存
+    换用bit来存储（假设1代表男，0代表女）的话，显然需要的空间将变成1/8
+
+---
+## 曾经的一道面试题
+给定一个自然数n，将它写成2的幂的和的形式
+`即写一个函数f，满足类似如下测试：`
+```go
+func f(n uint) string {...}
+
+func main() {
+        testCases := []struct{
+                input uint
+                expect string
+        }{
+                {input:3, expect:"2^0+2^1"},
+                {input:8, expect:"2^3"},
+                {input:1026, expect:"2^1+2^10"},
+                {input:2019, expect:"2^0+2^1+2^5+2^6+2^7+2^8+2^9+2^10"},
+        }
+        for _, c := range testCases {
+                result := f(c.input)
+                if result != c.expect {
+                        fmt.Printf("failed. input:%d, expected:%s, got:%s\n", c.input, c.expect, result)
+                }
+        }
+}
+```
+
+---
+## 让我们用计算机的视角看问题
+- 计算机眼中，数字3就是：
+    ...|0|0|0|0|0|0|1|1| --2^0+2^1
+- 数字1026就是：
+    ...|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|1|0| --2^1+2^10
+
+---
+## Bit set
+- 我们可以用一个[]byte来实现bit set; 一开始：
+    [|0|0|0|0|0|0|0|0|, |0|0|0|0|0|0|0|0|, ... ]
+- 假设要将bitset[8]置为1，怎么做呢？
+    bitset[8]实际上是底层切片的index为1的元素，我们需要将其第0个bit改为1
+    [|0|0|0|0|0|0|0|0|, |1|0|0|0|0|0|0|0|, ... ]
+    不妨将底层byte切片记为b， 那么我们做得事情是：b[1] = b[1] | (1 << 7)
+- 假设要将bitset[2019]置为0呢？
+    先确定2019对应的b的元素index： 2019 / 8 也就是252
+    第几个bit呢？ 2019 % 8 也就是 3
+    b[252] = b[252] & ^(1 << (7 - 3))
+    `1到底向左移动几位？跟2019%8有关；如果我们把每个字节的权看作从右边开始，会更简单`
+- bit世界的“或、与、非”，想起一首歌：
+    有人问我是与非，说是与非    ——李宗盛《为你我受冷风吹》
+
+---
+## 我们的实现
+.link https://github.com/zrcoder/dsGo/blob/master/base/bitset/bitset.go
