@@ -1,4 +1,21 @@
-# My Slides for code
+---
+layout: image-left
+image: /rd-left.png
+hideInToc: true
+selectable: true
+record: true
+colorSchema: 'light'
+---
+
+# My slides
+
+<img src='/rd-right.png' class='rounded' />
+<br>
+<toc maxDepth='1' columns='1' />
+
+---
+src: pages/front-back.md
+---
 
 ---
 src: pages/gotest.md
@@ -20,13 +37,7 @@ src: pages/heap.md
 src: pages/backtrack.md
 ---
 
------ 
-
-## Thanks
-
-```text
-zrcoder
-
-love-nankai@163.com
-```
+---
+src: pages/thank.md
+---
 
