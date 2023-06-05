@@ -1,7 +1,3 @@
----
-download: true
----
-
 # My Slides for code
 
 ---
