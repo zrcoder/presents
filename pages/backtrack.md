@@ -18,13 +18,13 @@
 求对于n个盘子，移动到最终位置需要的最少步数
 ```
 
-![hanoi](hanio1.png)
+![hanoi](/hanio1.png)
 
 ---
 
 $f(n) = 2 * f(n-1) + 1$
 
-<img src="hanio2.png" class="h-100">
+<img src="/hanio2.png" class="h-100">
 
 ---
 
@@ -520,7 +520,7 @@ func generateParenthesis(n int) []string {
 现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
 ```
 
-![robot](robot_maze.png)
+![robot](/robot_maze.png)
 
 ---
 
