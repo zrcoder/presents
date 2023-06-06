@@ -14,10 +14,6 @@ colorSchema: 'light'
 <toc maxDepth='1' columns='1' />
 
 ---
-src: pages/front-back.md
----
-
----
 src: pages/gotest.md
 ---
 
@@ -35,6 +31,10 @@ src: pages/heap.md
 
 ---
 src: pages/backtrack.md
+---
+
+---
+src: pages/front-back.md
 ---
 
 ---

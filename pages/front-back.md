@@ -1,12 +1,10 @@
 # 前端 ⇠⇢ 后端
 
-用 webassymbly 联通前后端
+<iframe src='https://ndor.netlify.app' width='100%' height='90%' />
 
 ---
-src: ndor.md
----
 
----
+## 用 webassymbly 统一前后端
 
 ```go {1,7}
 func (idx *index) Render() app.UI {
@@ -24,13 +22,11 @@ func (idx *index) Render() app.UI {
 ```go
 func goButtonAction(ctx app.Context, e app.Event) {
 	root := app.Window()
-	alert := root.Get("getNiudourAlert").Invoke()
 	code := root.Get("GetCode").Invoke().String()
-	alert.Call("toastPainting")
 	imgData, err := pkg.Run(width, height, code)
 	// ...
-	alert.Call("closePaintToast")
 	root.Get(pictureAreaID).Set("src", imgData)
 }
 ```
 
+[Source Code](https://github.com/zrcoder/ndor) | [Go WebAssembly](https://github.com/golang/go/wiki/WebAssembly)
