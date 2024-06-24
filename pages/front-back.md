@@ -13,7 +13,7 @@ func (idx *index) Render() app.UI {
 		app.Button().
 			ID("run-button").
 			Class("run-button").
-			OnClick(goButtonAction) 
+			OnClick(goButtonAction)
 			Text("GO"),
 	)
 }
@@ -29,4 +29,4 @@ func goButtonAction(ctx app.Context, e app.Event) {
 }
 ```
 
-[Source Code](https://github.com/zrcoder/ndor) | [Go WebAssembly](https://github.com/golang/go/wiki/WebAssembly)
+[Source Code](https://github.com/zrcoder/ndor) | [Go WebAssembly](https://go.dev/wiki/WebAssembly)
