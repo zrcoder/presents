@@ -39,4 +39,4 @@ func goButtonAction(ctx app.Context, e app.Event) {
 
 <img alt='dev-toys-by-amisgo' src='https://raw.githubusercontent.com/zrcoder/amisgo-examples/main/dt.png' style='width: 70%; height: 70%;' />
 
-[amisgo](https://github.com/zrcoder/amisgo) | [amisgo-examples](https://githuc.com/zrcoder/amisgo-examples)
+[amisgo](https://github.com/zrcoder/amisgo) | [amisgo-examples](https://github.com/zrcoder/amisgo-examples)
