@@ -37,6 +37,6 @@ func goButtonAction(ctx app.Context, e app.Event) {
 
 组件丰富的纯 Go 语言前端框架。
 
-![dev-toys-by-amisgo](https://raw.githubusercontent.com/zrcoder/amisgo-examples/main/dt.png)
+![dev-toys-by-amisgo](https://raw.githubusercontent.com/zrcoder/amisgo-examples/main/dtoy.png)
 
 [amisgo](https://github.com/zrcoder/amisgo) | [amisgo-examples](https://github.com/zrcoder/amisgo-examples)
